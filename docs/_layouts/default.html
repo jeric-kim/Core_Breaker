@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar__title">{{ site.title }}</div>
+      <div class="topbar__actions">
+        <button class="btn btn--ghost" id="helpButton" type="button">Help</button>
+        <button class="btn btn--ghost" id="resetButton" type="button">Reset</button>
+      </div>
+    </header>
+    <main class="page">
+      {{ content }}
+    </main>
+    <div class="bottombar">
+      <input
+        id="commandInput"
+        class="input"
+        type="text"
+        autocomplete="off"
+        placeholder="명령을 입력하세요…"
+      />
+      <button class="btn btn--primary" id="sendButton" type="button">Send</button>
+    </div>
+    <div class="modal" id="helpModal" aria-hidden="true">
+      <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+        <div class="modal__header">
+          <h2 id="helpTitle">도움말</h2>
+          <button class="btn btn--ghost" id="closeHelpButton" type="button">닫기</button>
+        </div>
+        <div class="modal__body" id="helpBody"></div>
+      </div>
+    </div>
+    <script defer src="{{ site.baseurl }}/assets/js/storage.js"></script>
+    <script defer src="{{ site.baseurl }}/assets/js/engine.js"></script>
+    <script defer src="{{ site.baseurl }}/assets/js/app.js"></script>
+  </body>
+</html>
